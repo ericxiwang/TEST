@@ -1,4 +1,7 @@
-
+###YMCA server site test script###
+###Author:Eric Wang ####
+###Create data:/5/1/2014####
+###script name:main_test.py#####
 
 import urllib
 import urllib2
