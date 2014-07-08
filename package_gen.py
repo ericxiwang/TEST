@@ -58,12 +58,12 @@ def package_generator(event_name,SDK_version,token_id,illegal_data,idfa_enable,d
    	"event_id": event_id_gen()
    	}
 
-   	if debug_mode == 1:
+   	if debug_mode == 1:	#if debug mode is enabled, insert "YA0debug:1" into JSON properties:{}
    		event_property["YA0debug"] = 1
-
+   		
+   	#main JSON:template_data
 	template_data = {
  	"event": event_name,
-
  	"properties": event_property
 
 	}
@@ -76,7 +76,7 @@ def package_generator(event_name,SDK_version,token_id,illegal_data,idfa_enable,d
 
 
 	json_data = json.dumps(template_data)
-	print json_data
+	#print json_data
 
    	transfer_base64 = "data="+base64.b64encode(json_data)
    	return transfer_base64

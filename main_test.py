@@ -4,13 +4,13 @@
 ###script name:main_test.py#####
 
 import urllib
-import urllib2
+#import urllib2
 import sys
 import threading
 import package_gen 
 url = "http://yax.ymcnetwork.com/track"
 
-data = package_gen.package_generator("YA0birth","1.3.0","8416e32af87f11e284c212313b0ace15","bbb","1","0")
+data = package_gen.package_generator("YA0birth","1.3.0","8416e32af87f11e284c212313b0ace15","bbb","1","1")
 
 count = 0
 '''
@@ -20,7 +20,7 @@ def http_post(url,data):
 
 '''
 
-
+#Create a new thread for http_post, using urllib
 class ThreadClass(threading.Thread):
 	
 
