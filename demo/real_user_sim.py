@@ -99,13 +99,13 @@ def event_gen(current_date,x,http_post_enable):
 		YA0birth = package_gen_duration.package_generator("YA0birth","2.0.2","8416e32af87f11e284c212313b0ace15",random_time(datetime_input),distinct_id)
 
 
-		http_post(YA0start_retention,YA0birth)
+		http_post(YA0birth,YA0birth)
 
 		
 		YA0start = package_gen_duration.package_generator("YA0start","2.0.2","8416e32af87f11e284c212313b0ace15",random_time(datetime_input),distinct_id)	# After YA0birth, matched one YA0start
 		##rex_YA0start = urllib.urlopen(url,YA0start)
 
-		http_post(YA0start_retention,YA0start)
+		http_post(YA0start,YA0start)
 
 
 	#########################  YA0session ############################
@@ -114,7 +114,7 @@ def event_gen(current_date,x,http_post_enable):
 
 		YA0session = package_gen_duration.package_generator("YA0session","2.0.2","8416e32af87f11e284c212313b0ace15",random_time(datetime_input),distinct_id)
 
-		http_post(YA0start_retention,YA0session)
+		http_post(YA0session,YA0session)
 
 		#rex_YA0session = urllib.urlopen(url,YA0session)
 
@@ -168,6 +168,7 @@ def event_gen(current_date,x,http_post_enable):
 
 
 					http_post(YA0start_retention,http_post_enable)
+
 					#rex_YA0start_retention = urllib.urlopen(url,YA0start_retention)
 
 					YA0charge = package_gen_duration.package_generator("YA0charge","2.0.2","8416e32af87f11e284c212313b0ace15",random_time(datetime_offset_1),daily_user_list[daily_retention])
@@ -207,10 +208,10 @@ if __name__ == '__main__':
 	#event_generator("YA0session")
 	#event_generator("YA0charge")
 	#user_retention()
-	date_start = "2014-6-24 00:00:00"
+	date_start = "2014-6-24"
 	duration = 33
-	http_post_enabled = 1
-	project_profile(date_start,duration,0)
+
+	project_profile(date_start,duration,http_post_enable = 0)
 
 
 
