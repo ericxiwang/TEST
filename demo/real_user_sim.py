@@ -208,7 +208,7 @@ if __name__ == '__main__':
 	#event_generator("YA0session")
 	#event_generator("YA0charge")
 	#user_retention()
-	date_start = "2014-6-24"
+	date_start = "2014-6-24 00:00:00"
 	duration = 33
 
 	project_profile(date_start,duration,http_post_enable = 0)
