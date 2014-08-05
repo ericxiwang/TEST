@@ -5,7 +5,7 @@ import uuid
 import package_gen_duration
 import time
 import datetime
-#url = "http://yax.ymcnetwork.com/track"
+# url = "http://yax.ymcnetwork.com/track"
 
 url = "http://10.1.1.33:3000/import"
 
@@ -124,10 +124,14 @@ def event_gen(current_date, x, http_post_enable):
 
             print "--------start retetion----------"
 
-            fate_percentage = [0.55, 0.49, 0.43, 0.37, 0.31, 0.25, 0.2, 0.12,
-                               0.08]  ######## array of retention rate ########
+            fate_percentage = [0.55, 0.49, 0.43, 0.37, 0.31, 0.25, 0.22, 0.21,
+                               0.19, 0.18, 0.17, 0.16, 0.158, 0.154, 0.149, 0.146, 0.142, 0.139, 0.136, 0.133, 0.13,
+                               0.127, 0.125, 0.123, 0.12, 0.118, 0.116, 0.115, 0.113, 0.111, 0.109, 0.108, 0.106, 0.105,
+                               0.104, 0.102, 0.101, 0.1, 0.099, 0.098, 0.097, 0.096, 0.095, 0.0938, 0.093, 0.092, 0.091,
+                               0.09, 0.089, 0.088, 0.087, 0.086, 0.085, 0.084, 0.083, 0.082, 0.081, 0.8,
+                               0.079,0.078]  ######## array of retention rate ########
 
-            for fade_rate in range(1, 9):
+            for fade_rate in range(1, len(fate_percentage)):
                 ######## go through the whole daily dirstinct_id and select randomly for 8 days
                 ######## add offset days to current datetime_offset_1 ############
 
@@ -147,7 +151,8 @@ def event_gen(current_date, x, http_post_enable):
 
                 ######print datetime_offset_1
 
-                real_percentage = fate_percentage[fade_rate] + random.uniform(-0.03, 0.05)
+                real_percentage = fate_percentage[fade_rate] + random.uniform(-0.003, 0.005)
+                print "++++",real_percentage
 
                 ####print "datetime_offset",datetime_offset
 
@@ -175,7 +180,7 @@ def event_gen(current_date, x, http_post_enable):
                                                                        daily_user_list[daily_retention])
 
                     http_post(YA0charge, http_post_enable)
-                #rex_YA0start_retention = urllib.urlopen(url,YA0charge)
+                    #rex_YA0start_retention = urllib.urlopen(url,YA0charge)
 
 
 ##################################	Retention Event end ######################################
@@ -199,7 +204,7 @@ if __name__ == '__main__':
     #event_generator("YA0charge")
     #user_retention()
     date_start = "2014-6-24 00:00:00"
-    duration = 33
+    duration = 66
 
     project_profile(date_start, duration, http_post_enable=0)
 
